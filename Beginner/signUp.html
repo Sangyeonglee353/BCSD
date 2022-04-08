@@ -75,7 +75,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fas fa-id-card fa-sm"></i> </span>
                   </div>
-                  <input id="studentNumber" class="student-number form-control" placeholder="Student Number" type="number" oninput="handleOnInput(this, 10)">
+                  <input id="studentNumber" class="student-number form-control" placeholder="Student Number" type="number" oninput="Maxlength(this, 10)">
                 </div> <!-- input-group.// -->
               </div> <!-- form-group// -->
               <div class="form-group">
@@ -91,7 +91,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-phone fa-sm fa-rotate-180"></i> </span>
                   </div>
-                  <input class="phone-number form-control" placeholder="Phone Number" type="tel">
+                  <input id="phoneNumber" class="phone-number form-control" placeholder="Phone Number" type="text" maxlength="13" oninput="autoHypen(this)">
                 </div> <!-- input-group.// -->
               </div> <!-- form-group// -->
 

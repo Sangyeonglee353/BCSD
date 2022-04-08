@@ -15,7 +15,7 @@ function LoginCheck() {
 }
 
 // 최대 글자수 설정 함수
-function handleOnInput(el, maxlength) {
+function Maxlength(el, maxlength) {
     if (el.value.length > maxlength) {
         el.value = el.value.substr(0, maxlength);
     }
@@ -81,7 +81,6 @@ function ValidateCheck() {
     const userId = document.getElementById("userId");
     const userPassword = document.getElementById("userPassword");
     const confirmedPassword = document.getElementById("confirmedPassword");
-    //const studentNumber = document.getElementById("studentNumber");
 
     // 이메일 정규식
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -103,35 +102,59 @@ function ValidateCheck() {
     }
 
     // 3.2 비밀번호 검사
-    // 3.2.1 비밀번호 유형 검사
+    // 3.2.1 비밀번호 입력 여부
     if (userPassword.value == "") {
         alert("비밀번호를 입력해 주세요.");
         userPassword.focus();
         return false;
-    }
+    } // 3.2.2 비밀번호 유효성 검사
     else if (!userPassword.value.match(passwordFormat)) {
         alert("비밀번호는 최소 8자 이상이어야 하며, 대문자/소문자/숫자/특수문자를 모두 포함해야 합니다.")
         userPassword.focus();
         return false;
-    }
+    } // 3.2.3 비밀번호 확인 입력 여부
     else if (confirmedPassword.value == "") {
         alert("비밀번호 확인을 입력해 주세요.");
         confirmedPassword.foucs();
         return false;
-    }
+    } // 3.2.4 비밀번호와 비밀번호 확인 매칭 여부
     else if (userPassword.value != confirmedPassword.value) {
         alert("비밀번호가 일치하지 않습니다.")
         confirmedPassword.focus();
         return false;
     }
 
-    // 4. 학번 검사
+    // 3.3 학번 입력 검사
     if (studentNumber.value == "") {
         alert("학번을 입력해 주세요.");
+        studentNumber.focus();
+        return false;
+    }
+    
+    // 3.4 휴대폰 번호 입력 검사
+    const phoneNumber = document.getElementById("phoneNumber");
+    if(phoneNumber.value == ""){
+        alert("휴대폰 번호를 입력해 주세요.");
+        phoneNumber.focus();
+        return false;
+    }
+
+    // 3.5 학번 검사
+    const major = document.getElementById("major");
+
+    if(major.innerHTML == "학번을 확인해 주세요."){
+        alert("학번을 확인해 주세요.");
         studentNumber.focus();
         return false;
     }
 
     // 입력 값 전송
     signUpForm.submit();
+}
+
+// 4. 휴대폰 번호 자동 '-' 넣기
+// 숫자만 입력 가능, 자동 '-' 넣기
+// 유형 1: 00-000-0000, 유형 2: 000-0000-0000
+const autoHypen = (target) => {
+    target.value = target.value.replace(/[^0-9]/, '').replace(/^(\d{2,3})(\d{3,4})(\d{4})$/, `$1-$2-$3`);
 }
