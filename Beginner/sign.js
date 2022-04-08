@@ -1,5 +1,5 @@
 // 로그인 함수
-function LoginCheck() {
+function loginCheck() {
     const signInForm = document.forms["signIn_form"];
     const loginId = document.getElementById("loginId");
     const loginPassword = document.getElementById("loginPassword");
@@ -15,7 +15,7 @@ function LoginCheck() {
 }
 
 // 최대 글자수 설정 함수
-function Maxlength(el, maxlength) {
+function maxLength(el, maxlength) {
     if (el.value.length > maxlength) {
         el.value = el.value.substr(0, maxlength);
     }
@@ -76,7 +76,7 @@ function compareNumberMajor(){
 studentNumber.addEventListener("change", compareNumberMajor, false);
 
 // 3. 회원가입 유효성 검사
-function ValidateCheck() {
+function validateCheck() {
     const signUpForm = document.forms["signUp_form"];
     const userId = document.getElementById("userId");
     const userPassword = document.getElementById("userPassword");
