@@ -15,7 +15,7 @@ function loginCheck() {
 }
 
 // 최대 글자수 설정 함수
-function maxLength(el, maxlength) {
+function handleLength(el, maxlength) {
     if (el.value.length > maxlength) {
         el.value = el.value.substr(0, maxlength);
     }
