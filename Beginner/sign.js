@@ -5,7 +5,7 @@ function loginCheck() {
     const loginPassword = document.getElementById("loginPassword");
 
     if (loginId.value.trim() == "" || loginPassword.value.trim() == "") {
-        alert("id, pw를 입력해 주세요.");
+        alert("ID, P/W를 입력해 주세요.");
         loginId.focus();
         return false;
     }
@@ -79,8 +79,13 @@ studentNumber.addEventListener("change", compareNumberMajor, false);
 function validateCheck() {
     const signUpForm = document.forms["signUp_form"];
     const userId = document.getElementById("userId");
+    const userIdMsg = document.getElementById("userIdMsg");
+
     const userPassword = document.getElementById("userPassword");
+    const userPasswordMsg = document.getElementById("userPasswordMsg");
+
     const confirmedPassword = document.getElementById("confirmedPassword");
+    const confirmedPasswordMsg = document.getElementById("confirmedPasswordMsg");
 
     // 이메일 정규식
     const mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -89,63 +94,91 @@ function validateCheck() {
 
     // 3.1 이메일 유효성 검사
     if (userId.value == "") {
-        alert("이메일을 입력해주세요.");
+        //alert("이메일을 입력해주세요.");
+        userIdMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>이메일을 입력해 주세요.</span>"
+        userId.focus();
+        return false;
+    }
+    else if (!userId.value.match(mailFormat)) {
+        //alert("유효하지 않은 이메일입니다. 이메일 형식을 확인해주세요.");
+        userIdMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>유효하지 않은 이메일입니다. 이메일 형식을 확인해주세요.</span>"
         userId.focus();
         return false;
     }
     else {
-        if (!userId.value.match(mailFormat)) {
-            alert("유효하지 않은 이메일입니다. 이메일 형식을 확인해주세요.");
-            userId.focus();
-            return false;
-        }
+        userIdMsg.innerHTML = "<span></span>";
     }
 
     // 3.2 비밀번호 검사
     // 3.2.1 비밀번호 입력 여부
     if (userPassword.value == "") {
-        alert("비밀번호를 입력해 주세요.");
+        //alert("비밀번호를 입력해 주세요.");
+        userPasswordMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>비밀번호을 입력해 주세요.</span>"
         userPassword.focus();
         return false;
     } // 3.2.2 비밀번호 유효성 검사
     else if (!userPassword.value.match(passwordFormat)) {
-        alert("비밀번호는 최소 8자 이상이어야 하며, 대문자/소문자/숫자/특수문자를 모두 포함해야 합니다.")
+        //alert("비밀번호는 최소 8자 이상이어야 하며, 대문자/소문자/숫자/특수문자를 모두 포함해야 합니다.")
+        userPasswordMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>최소 8자 이상, 대소문자/숫자/특수문자를 모두 포함해 주세요.</span>"
         userPassword.focus();
         return false;
-    } // 3.2.3 비밀번호 확인 입력 여부
-    else if (confirmedPassword.value == "") {
-        alert("비밀번호 확인을 입력해 주세요.");
-        confirmedPassword.foucs();
+    }
+    else {
+        userPasswordMsg.innerHTML = "<span></span>";
+    }
+
+    // 3.2.3 비밀번호 확인 입력 여부
+    if (confirmedPassword.value == "") {
+        //alert("비밀번호 확인을 입력해 주세요.");
+        confirmedPasswordMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>비밀번호 확인을 입력해 주세요.</span>"
+        confirmedPassword.focus();
         return false;
     } // 3.2.4 비밀번호와 비밀번호 확인 매칭 여부
     else if (userPassword.value != confirmedPassword.value) {
-        alert("비밀번호가 일치하지 않습니다.")
+        //alert("비밀번호가 일치하지 않습니다.")
+        confirmedPasswordMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>비밀번호가 일치하지 않습니다.</span>"
         confirmedPassword.focus();
         return false;
     }
+    else{
+        confirmedPasswordMsg.innerHTML = "<span></span>";
+    }
 
     // 3.3 학번 입력 검사
+    const studentNumberMsg = document.getElementById("studentNumberMsg");
     if (studentNumber.value == "") {
-        alert("학번을 입력해 주세요.");
+        //alert("학번을 입력해 주세요.");
+        studentNumberMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>학번을 입력해 주세요.</span>"
         studentNumber.focus();
         return false;
     }
-    
+    else{
+        studentNumberMsg.innerHTML = "<span></span>";
+    }
+
     // 3.4 휴대폰 번호 입력 검사
     const phoneNumber = document.getElementById("phoneNumber");
-    if(phoneNumber.value == ""){
-        alert("휴대폰 번호를 입력해 주세요.");
+    const phoneNumberMsg = document.getElementById("phoneNumberMsg");
+    if (phoneNumber.value == "") {
+        //alert("휴대폰 번호를 입력해 주세요.");
+        phoneNumberMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>휴대폰 번호을 입력해 주세요.</span>"
         phoneNumber.focus();
         return false;
+    }
+    else{
+        phoneNumberMsg.innerHTML = "<span></span>";
     }
 
     // 3.5 학번 검사
     const major = document.getElementById("major");
-
-    if(major.innerHTML == "학번을 확인해 주세요."){
-        alert("학번을 확인해 주세요.");
+    if (major.innerHTML == "&nbsp;" || major.innerHTML == "학번을 확인해 주세요.") {
+        //alert("학번을 확인해 주세요.");
+        studentNumberMsg.innerHTML = "<span class='mt-3 ml-5' style='color:red; font-size:1px;'>학번을 확인해 주세요.</span>"
         studentNumber.focus();
         return false;
+    }
+    else{
+        studentNumberMsg.innerHTML = "<span></span>";
     }
 
     // 입력 값 전송
