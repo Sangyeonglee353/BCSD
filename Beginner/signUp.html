@@ -29,6 +29,9 @@
         <li class="nav-item active">
           <a class="nav-link ml-3" href="#">About<span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link ml-3" href="./randomCat.html">Cat<span class="sr-only">(current)</span></a>
+        </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <a href="./signIn.html" class="signin-link btn my-2 my-sm-0 text-white bg-transparent mr-2">Sign In</a>
@@ -51,7 +54,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-user fa-sm"></i> </span>
                   </div>
-                  <input id="userId" class="id form-control" placeholder="Your Email" type="email"> 
+                  <input id="userId" class="id form-control" placeholder="Your Email" type="email">
                 </div> <!-- input-group.// -->
                 <span id="userIdMsg"></span>
               </div> <!-- form-group// -->
@@ -69,7 +72,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fas fa-key fa-sm"></i> </span>
                   </div>
-                  <input id="confirmedPassword" class="pw-check form-control" placeholder="Repeat your password" type="password">
+                  <input id="confirmedPassword" class="pw-check form-control" placeholder="Repeat your password"
+                    type="password">
                 </div> <!-- input-group.// -->
                 <span id="confirmedPasswordMsg"></span>
               </div> <!-- form-group// -->
@@ -78,7 +82,8 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fas fa-id-card fa-sm"></i> </span>
                   </div>
-                  <input id="studentNumber" class="student-number form-control" placeholder="Student Number" type="number" oninput="handleLength(this, 10)">
+                  <input id="studentNumber" class="student-number form-control" placeholder="Student Number"
+                    type="number" oninput="handleLength(this, 10)">
                 </div> <!-- input-group.// -->
                 <span id="studentNumberMsg"></span>
               </div> <!-- form-group// -->
@@ -95,13 +100,15 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text"> <i class="fa fa-phone fa-sm fa-rotate-180"></i> </span>
                   </div>
-                  <input id="phoneNumber" class="phone-number form-control" placeholder="Phone Number" type="text" maxlength="13" oninput="autoHypen(this)">
+                  <input id="phoneNumber" class="phone-number form-control" placeholder="Phone Number" type="text"
+                    maxlength="13" oninput="autoHypen(this)">
                 </div> <!-- input-group.// -->
                 <span id="phoneNumberMsg"></span>
               </div> <!-- form-group// -->
 
               <div class="form-group">
-                <button type="button" class="signup btn btn-primary btn-block" onclick="validateCheck();">Register</button>
+                <button type="button" class="signup btn btn-primary btn-block"
+                  onclick="validateCheck();">Register</button>
               </div> <!-- form-group// -->
               <p class="text-center"><a href="./signIn.html" class="cancel btn">Cancel</a></p>
             </form>
