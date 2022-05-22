@@ -1,0 +1,24 @@
+#weather{
+    margin:20px auto;
+    text-align:center;
+}
+#weatherData{
+    margin: 20px auto;
+    padding-top:10px;
+    border:5px solid blue;
+    width:250px;
+    height:150px;
+    background-color: #617DF9;
+}
+#weatherLocation{
+    margin-top:20px;
+}
+#weatherLocation input{
+    width: 210px;
+    text-align:right;
+}
+#weatherLocation button{
+    display:flex;
+    margin: 10px auto;
+    border: 1px solid black;
+}
