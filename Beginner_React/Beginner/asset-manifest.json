@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/BCSD/Beginner_React/Beginner/static/css/main.88373b41.css",
-    "main.js": "/BCSD/Beginner_React/Beginner/static/js/main.a097229d.js",
+    "main.js": "/BCSD/Beginner_React/Beginner/static/js/main.aac48ec8.js",
     "static/js/787.e31acac7.chunk.js": "/BCSD/Beginner_React/Beginner/static/js/787.e31acac7.chunk.js",
     "static/media/network2.png": "/BCSD/Beginner_React/Beginner/static/media/network2.7a7b2ef48880fea720f1.png",
     "index.html": "/BCSD/Beginner_React/Beginner/index.html",
     "main.88373b41.css.map": "/BCSD/Beginner_React/Beginner/static/css/main.88373b41.css.map",
-    "main.a097229d.js.map": "/BCSD/Beginner_React/Beginner/static/js/main.a097229d.js.map",
+    "main.aac48ec8.js.map": "/BCSD/Beginner_React/Beginner/static/js/main.aac48ec8.js.map",
     "787.e31acac7.chunk.js.map": "/BCSD/Beginner_React/Beginner/static/js/787.e31acac7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.88373b41.css",
-    "static/js/main.a097229d.js"
+    "static/js/main.aac48ec8.js"
   ]
 }
